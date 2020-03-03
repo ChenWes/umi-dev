@@ -53,4 +53,28 @@ const request = extend({
   // 默认错误处理
   credentials: 'include', // 默认请求是否带上cookie
 });
+
+/**
+ * 请求拦截器
+ */
+request.interceptors.request.use((url, options) => {
+  if (localStorage.getItem('token')) {
+    options.headers.Authorization = `Bearer ` + 'weschen'
+  }
+  return { url, options }
+})
+
+/**
+ * 响应拦截器
+ */
+request.interceptors.response.use((response, options) => {
+  console.log('tttt', response);
+
+  if (response.status == 405) {
+    console.log('wwwwwwwww', '401')
+  }
+
+  return { response, options }
+})
+
 export default request;
