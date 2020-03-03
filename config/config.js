@@ -88,6 +88,17 @@ export default {
       ],
     },
     {
+      path: '/emptypage1',
+      component: '../layouts/BlankLayout',
+      routes: [
+        {
+          name: 'empty page',
+          path: '/EmptyPage1',
+          component: './EmptyPage1',
+        },
+      ],
+    },
+    {
       path: '/',
       component: '../layouts/SecurityLayout',
       routes: [
@@ -121,6 +132,18 @@ export default {
                   authority: ['admin'],
                 },
               ],
+            },
+            {
+              name: 'sub-page',
+              icon: 'smile',
+              path: '/listtablelist',
+              component: './ListTableList',
+            },
+            {
+              name: '空白页面',
+              icon: 'smile',
+              path: '/emptypage',
+              component: './EmptyPage',
             },
             {
               component: './404',
