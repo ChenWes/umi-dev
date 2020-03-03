@@ -58,9 +58,13 @@ const request = extend({
  * 请求拦截器
  */
 request.interceptors.request.use((url, options) => {
+  console.log({ url, options })
   if (localStorage.getItem('token')) {
     options.headers.Authorization = `Bearer ` + 'weschen'
   }
+
+  url = 'http://localhost:6000' + url
+
   return { url, options }
 })
 
