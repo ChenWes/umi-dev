@@ -63,6 +63,7 @@ request.interceptors.request.use((url, options) => {
     options.headers.Authorization = `Bearer ` + 'weschen'
   }
 
+  //直接重定向到指定的API服务器
   url = 'http://localhost:6000' + url
 
   return { url, options }
