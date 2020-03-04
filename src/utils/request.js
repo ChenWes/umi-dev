@@ -59,6 +59,9 @@ const request = extend({
  */
 request.interceptors.request.use((url, options) => {
   console.log({ url, options })
+
+  console.log('请求拦截器获取的变量 API==>' + REACT_APP_HOST_IP_ADDRESS)
+
   if (localStorage.getItem('token')) {
     options.headers.Authorization = `Bearer ` + 'weschen'
   }
