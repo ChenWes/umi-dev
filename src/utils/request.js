@@ -64,7 +64,7 @@ request.interceptors.request.use((url, options) => {
   }
 
   //直接重定向到指定的API服务器
-  url = 'http://localhost:6000' + url
+  // url = 'http://localhost:6000' + url
 
   return { url, options }
 })
@@ -72,14 +72,14 @@ request.interceptors.request.use((url, options) => {
 /**
  * 响应拦截器
  */
-request.interceptors.response.use((response, options) => {
-  console.log('tttt', response);
+request.interceptors.response.use(response => {
+  console.log(response);
 
-  if (response.status == 405) {
-    console.log('wwwwwwwww', '401')
-  }
+  // if (response.status == 405) {
+  //   console.log('wwwwwwwww', '401')
+  // }
 
-  return { response, options }
+  return response
 })
 
 export default request;
