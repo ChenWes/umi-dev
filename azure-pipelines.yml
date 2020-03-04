@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'cf-mes-workbench:$(build.BuildNumber)'
+  imageName: 'umi-dev:$(build.BuildNumber)'
 
 steps:
 - script: docker build --build-arg REACT_APP_HOST_IP_ADDRESS=123456789 -f Dockerfile -t $(imageName) .
