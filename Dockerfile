@@ -25,7 +25,7 @@ WORKDIR /usr/src/app
 
 COPY ./package.json /app
 
-RUN npm install
+RUN npm run install
 
 COPY . /usr/src/app
 
