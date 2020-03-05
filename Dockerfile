@@ -42,7 +42,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 
-RUN apk update && apk upgrade && apk add --no-cache git
+# RUN apk update && apk upgrade && apk add --no-cache git
 
 
 COPY run.sh /usr/src/app
