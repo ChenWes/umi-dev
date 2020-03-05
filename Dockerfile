@@ -49,4 +49,4 @@ COPY . /usr/src/app
 RUN yarn install --ignore-engines
 
 
-CMD [ "yarn start" ]
+CMD [ "npm start" ]
