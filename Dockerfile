@@ -43,13 +43,9 @@ WORKDIR /usr/src/app
 
 
 # RUN apk update && apk upgrade && apk add --no-cache git
-
-
-COPY run.sh /usr/src/app
-RUN ["chmod", "+x", "./run.sh"]
-
 COPY . /usr/src/app
 RUN yarn install --ignore-engines
 
+RUN ["chmod", "+x", "./run.sh"]
 
 CMD [ "./run.sh" ]
