@@ -35,7 +35,7 @@
 
 
 # step 1. 从docker获取node镜像
-FROM node:10.16 as webpackNode
+FROM node:alpine as webpackNode
 USER root
 
 RUN mkdir -p /usr/src/app
