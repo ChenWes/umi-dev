@@ -35,8 +35,8 @@
 
 
 # step 1. 从docker获取node镜像
-FROM node:alpine as webpackNode
-
+FROM node:10.16 as webpackNode
+USER root
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -49,4 +49,4 @@ COPY . /usr/src/app
 RUN yarn install --ignore-engines
 
 
-CMD [ "npm start" ]
+CMD [ "npm","start" ]
