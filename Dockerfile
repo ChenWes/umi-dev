@@ -19,16 +19,38 @@
 
 
 
-FROM node:10.16.0
+# FROM node:10.16.0
+
+# WORKDIR /usr/src/app
+
+# COPY ./package.json /app
+
+# RUN npm install -g umi
+
+# RUN npm install
+
+# COPY . /usr/src/app
+
+# CMD ["npm", "start"]
+
+
+# step 1. 从docker获取node镜像
+FROM node:10.16.0 as webpackNode
+
+
+RUN mkdir -p /usr/src/app
+
 
 WORKDIR /usr/src/app
 
-COPY ./package.json /app
 
-RUN npm install -g umi
+RUN apk update && apk upgrade && apk add --no-cache bash git openssh
 
-RUN npm install
 
 COPY . /usr/src/app
 
-CMD ["npm", "start"]
+
+RUN yarn install --ignore-engines
+
+
+RUN yarn start
