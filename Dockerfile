@@ -35,17 +35,16 @@
 
 
 # step 1. 从docker获取node镜像
-FROM node:10.16.0 as webpackNode
-# USER root
+FROM node:10.16.0
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-
 # RUN apk update && apk upgrade && apk add --no-cache git
 COPY . /usr/src/app
+RUN chmod +x ./run.sh
+
 RUN yarn install --ignore-engines
 
-RUN ["chmod", "+x", "./run.sh"]
 
 CMD [ "./run.sh" ]
