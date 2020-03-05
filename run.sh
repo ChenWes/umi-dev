@@ -12,7 +12,4 @@ if [ $NODE_ENV == "development" ]; then
 else
   # build the app and serve it via nginx
   yarn build
-  mkdir -p $ROOT/logs/nginx
-  nginx -g 'daemon off;' -c $ROOT/src/nginx.conf
-  nginx -c $ROOT/src/nginx.conf
 fi
