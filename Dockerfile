@@ -36,7 +36,7 @@
 
 # step 1. 从docker获取node镜像
 FROM node:10.16.0 as webpackNode
-USER root
+# USER root
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -46,7 +46,7 @@ WORKDIR /usr/src/app
 
 
 COPY run.sh /usr/src/app
-RUN chmod +x ./run.sh
+RUN ["chmod", "+x", "./run.sh"]
 
 COPY . /usr/src/app
 RUN yarn install --ignore-engines
